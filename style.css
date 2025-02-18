@@ -19,7 +19,6 @@ body {
     overflow: hidden;
 }
 
-/* Ensure images are contained and do not overflow */
 .slide {
     max-width: 100%;
     max-height: 100%;
@@ -29,25 +28,24 @@ body {
     position: absolute;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    z-index: 1; /* Keeps images behind buttons */
+    z-index: 1;
 }
 
 .slide.active {
     opacity: 1;
 }
 
-/* Navigation Buttons */
 .nav-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    bottom: 20px; 
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
     border: none;
     padding: 15px;
     font-size: 24px;
     cursor: pointer;
-    z-index: 10; /* Ensure buttons stay on top */
+    z-index: 10; 
     transition: background 0.3s;
     width: 50px;
     height: 50px;
@@ -58,10 +56,6 @@ body {
     border-radius: 5px;
 }
 
-.nav-btn:hover {
-    background-color: rgba(0, 0, 0, 1);
-}
-
 .prev {
     left: 20px;
 }
@@ -70,34 +64,16 @@ body {
     right: 20px;
 }
 
-/* Slide Bar (Pagination Dots) */
-.slide-bar {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10; /* Ensure slide bar stays visible */
+.slideshow-container .nav-btn.prev {
+    left: calc(50% - 60px); 
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+.slideshow-container .nav-btn.next {
+    left: calc(50% + 10px); }
 
-.dot.active {
-    background-color: white;
-}
-
-/* Auto-Play Toggle (Checkbox Switch) */
 .toggle-container {
     position: absolute;
-    bottom: 20px;
+    bottom: 80px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -105,7 +81,31 @@ body {
     gap: 10px;
     color: white;
     font-size: 16px;
-    z-index: 10; /* Keeps it visible */
+    z-index: 10;
+}
+
+/* Slide Bar (Pagination Dots) */
+.slide-bar {
+    position: absolute;
+    bottom: 40px; /* Adjust it to sit below the auto slideshow button */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: black;
 }
 
 /* Custom Checkbox Toggle */
@@ -129,11 +129,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .switch input:checked + .slider {
-    background-color: white;
+    background-color: black;
 }
