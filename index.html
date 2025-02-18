@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Slideshow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <img class="slide active" src="image1.png" alt="Image 1">
+        <img class="slide" src="image2.jpg" alt="Image 2">
+        <img class="slide" src="image3.jpg" alt="Image 3">
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button class="nav-btn prev" onclick="prevSlide()">❮</button>
+    <button class="nav-btn next" onclick="nextSlide()">❯</button>
+
+    <!-- Slide Bar (Pagination Dots) -->
+    <div class="slide-bar"></div>
+
+    <!-- Auto-Play Toggle (Checkbox) -->
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="autoPlayToggle" checked onchange="toggleAutoPlay()">
+            <span class="slider"></span>
+        </label>
+        <p>Auto Slideshow</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
